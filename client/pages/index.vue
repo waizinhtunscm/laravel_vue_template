@@ -1,8 +1,9 @@
 <template>
-  <h1>{{hello}}</h1>
+  <!-- <h1>{{hello}}</h1> -->
+  hay
 </template>
 
-<script>
+<!-- <script>
 import axios from 'axios';
 export default {
   data() {
@@ -21,4 +22,4 @@ export default {
     })
   }
 }
-</script>
+</script> -->
