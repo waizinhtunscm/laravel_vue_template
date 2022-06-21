@@ -1,8 +1,0 @@
-[
-  {
-    "name": "index",
-    "path": "/",
-    "component": "/var/www/pages/index.vue",
-    "chunkName": "pages/index"
-  }
-]
