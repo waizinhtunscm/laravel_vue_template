@@ -25,7 +25,6 @@ services:
             - '8090:8080'
         volumes:
             - ./client:/var/www
-
     db:
         image: mysql:5.7
         environment:

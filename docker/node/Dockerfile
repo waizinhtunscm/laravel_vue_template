@@ -1,7 +1,7 @@
 FROM node:12.4-alpine
 
 WORKDIR /var/www
-# COPY package.json .
+COPY . .
 
 EXPOSE 8090
 
