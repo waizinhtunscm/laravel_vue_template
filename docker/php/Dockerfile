@@ -25,6 +25,7 @@ RUN set -x \
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME /composer
 ENV PATH $PATH:/composer/vendor/bin
+ENV COMPOSER_MEMORY_LIMIT=-1
 
 WORKDIR /var/www
 COPY . .
@@ -34,11 +35,11 @@ RUN set -x \
   && composer config -g repositories.packagist composer https://packagist.jp \
   && composer global require hirak/prestissimo \
   && composer global require "laravel/installer" 
-#   && composer install
+  # && composer install
 
 
 # fix chmod
 RUN set -x \
-#   && chmod -R 777 storage/
+  && chmod -R 777 storage/
 
 EXPOSE 9000
