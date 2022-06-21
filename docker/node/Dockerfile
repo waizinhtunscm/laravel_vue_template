@@ -9,4 +9,4 @@ ENV NUXT_HOST=0.0.0.0
 
 ENV NUXT_PORT=8090
 
-CMD ["sh", "-c", "yarn install && yarn dev"]
+CMD ["sh", "-c", "yarn cache clean && yarn install && yarn dev"]
