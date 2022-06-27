@@ -1,7 +1,7 @@
 {
-    "name": "kitchenhouse",
+    "name": "laravel-ve",
     "version": "1.0.0",
-    "description": "kitchenhouse",
+    "description": "laravel-vue",
     "author": "",
     "private": true,
     "scripts": {
