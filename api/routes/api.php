@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\api\v1\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +22,11 @@ Route::prefix('v1')->group(function () {
         return response('Hello World!', 200)
         ->header('Content-Type', 'text/plain');
     });
+    Route::get('blogs', [BlogController::class, 'all']);
+    Route::get('blogs/{id}', [BlogController::class, 'edit']);
+    Route::post('blogs', [BlogController::class, 'create']);
+    Route::put('blogs/{id}', [BlogController::class, 'update']);
+    Route::delete('blogs/{id}', [BlogController::class, 'delete']);
+
 }); 
 

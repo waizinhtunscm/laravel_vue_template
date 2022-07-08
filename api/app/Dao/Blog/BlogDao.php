@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Dao\Blog;
-
+use App\Models\Blog; 
 use App\Dao\Blog\BlogDaoInterface;
 use Illuminate\Http\Request;
 
@@ -21,12 +21,13 @@ class BlogDao implements BlogDaoInterface
         return Blog::findOrFail($id);
     }
 
+
     public function create($request) 
     {
         return Blog::create($request);
     }
 
-    public function update($request)) 
+    public function update($request)
     {
         return Blog::update($request);
     }

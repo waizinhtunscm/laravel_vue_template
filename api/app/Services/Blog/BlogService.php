@@ -3,6 +3,7 @@
 namespace App\Services\Blog;
 
 use App\Services\Blog\BlogServiceInterface;
+use App\Dao\Blog\BlogDaoInterface;
 use Illuminate\Http\JsonResponse;
 
 class BlogService implements BlogServiceInterface
@@ -13,12 +14,12 @@ class BlogService implements BlogServiceInterface
     private $blogDao;
     /**
      * Class Constructor
-     * @param AuthDaoInterface
+     * @param BlogDaoInterface
      * @return
      */
-    public function __construct()
+    public function __construct(BlogDaoInterface $blogDaoInterface)
     {
-        //
+        $this->blogDao = $blogDaoInterface; 
     }
     /**
      * To get all blogs.

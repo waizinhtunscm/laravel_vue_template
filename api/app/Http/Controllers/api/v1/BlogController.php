@@ -12,12 +12,12 @@ class BlogController extends Controller
 {
 
     /**
-     * Auth Interface
+     * Blog Interface
      */
     private $blogInterface;
     /**
      * Create a new controller instance.
-     * @param AuthServiceInterface $authServiceInterface
+     * @param BlogServiceInterface $authServiceInterface
      * @return void
      */
     public function __construct(BlogServiceInterface $blogServiceInterface)
@@ -34,7 +34,7 @@ class BlogController extends Controller
     {
         
         return response()->json([
-            'data' => $this->blogInterface->all(); 
+            'data' => $this->blogInterface->all()
         ]);
     }
 
@@ -44,16 +44,17 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create(Request $request): JsonResponse 
     {
+        // return ($request->all()); 
         return response()->json(
             [
-                'data' => $this->blogInterface->create($request)
+                'data' => $this->blogInterface->create($request->all())
             ],
             Response::HTTP_CREATED
+            // $request->all()
         );
     }
-
 
     /**
      * Show the form for editing the specified resource.
@@ -64,7 +65,7 @@ class BlogController extends Controller
     public function edit($id)
     {
         return response()->json([
-            'data' => $this->blogInterface->edit($request->route('id');)
+            'data' => $this->blogInterface->edit($request->route('id'))
         ]);
     }
 

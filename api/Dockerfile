@@ -42,6 +42,7 @@ RUN set -x \
 RUN set -x \
   && chmod -R 777 storage \
   && chmod -R 777 storage/* \
+  && chmod -R 777 storage/logs/* \
   && chmod -R 777 bootstrap \
   && chmod -R 777 bootstrap/* 
 

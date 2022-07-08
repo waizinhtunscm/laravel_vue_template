@@ -9,7 +9,7 @@ interface BlogServiceInterface
     // To get blog
     public function findBy($id);
     // To create blog
-    public function create($request, $validated);
+    public function create($request);
     // To update blog
     public function update($request);
     //To delete blog     
