@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
 use App\Services\Blog\BlogServiceInterface; 
+use App\Models\Blog; 
 
 class BlogController extends Controller
 {
@@ -30,11 +31,12 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function all()
+    public function index()
     {
         
         return response()->json([
             'data' => $this->blogInterface->all()
+            // "waizin"
         ]);
     }
 
@@ -44,9 +46,8 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request): JsonResponse 
+    public function store(Request $request): JsonResponse 
     {
-        // return ($request->all()); 
         return response()->json(
             [
                 'data' => $this->blogInterface->create($request->all())
@@ -65,7 +66,8 @@ class BlogController extends Controller
     public function edit($id)
     {
         return response()->json([
-            'data' => $this->blogInterface->edit($request->route('id'))
+            // 'data' => $this->blogInterface->edit($request->route('id'))
+            "waizin"
         ]);
     }
 

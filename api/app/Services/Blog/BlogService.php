@@ -28,7 +28,7 @@ class BlogService implements BlogServiceInterface
      */
     public function all()
     {
-        $blogs = $this->blogDao->all();
+        return $blogs = $this->blogDao->all();
     }
     /**
      * To get blog by id
