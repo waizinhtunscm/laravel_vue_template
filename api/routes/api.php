@@ -21,11 +21,5 @@ Route::get('/home', function () {
     return response('Hello World!', 200)
     ->header('Content-Type', 'text/plain');
 });
-    // Route::get('blogs', [BlogController::class, 'index']);
-    Route::get('blogs/{id}', [BlogController::class, 'edit']);
-    // Route::post('blogs', [BlogController::class, 'create']);
-    // Route::put('blogs/{id}', [BlogController::class, 'update']);
-    // Route::delete('blogs/{id}', [BlogController::class, 'delete']);
-    
-// Route::apiResource('blogs','BlogController');
+
 
