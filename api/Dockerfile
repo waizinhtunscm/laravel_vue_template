@@ -18,7 +18,7 @@ RUN docker-php-ext-enable pdo_mysql mbstring xml curl session tokenizer json xde
 RUN set -x \
    && php -r "copy('https://getcomposer.org/installer', '/tmp/composer-setup.php');" \
    && php -r "if (hash_file('SHA384', '/tmp/composer-setup.php') !== trim(file_get_contents('https://composer.github.io/installer.sig'))) { echo 'ERROR: Invalid installer signature' . PHP_EOL; unlink('/tmp/composer-setup.php'); exit(1); }" \
-   && php /tmp/composer-setup.php --version=1.10.13 --install-dir=/usr/local/bin --filename=composer   \
+   && php /tmp/composer-setup.php --version=2.0.1 --install-dir=/usr/local/bin --filename=composer   \
    && rm -rf /tmp/composer-setup.php
 
 # Set composer environment
@@ -33,7 +33,6 @@ COPY . .
 # Install laravel installer
 RUN set -x \
   && composer config -g repositories.packagist composer https://packagist.jp \
-  && composer global require hirak/prestissimo \
   && composer global require "laravel/installer" \
   && composer install
 
